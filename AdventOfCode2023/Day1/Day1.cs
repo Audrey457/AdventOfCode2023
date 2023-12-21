@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AdventOfCode2023
+﻿namespace AdventOfCode2023.Day1
 {
     public static class Day1
     {
@@ -23,8 +17,8 @@ namespace AdventOfCode2023
         public static int GetCalibrationSum()
         {
             int total = 0;
-            var sw = new StreamWriter(@"C:\Users\310616706\source\repos\AdventOfCode2023\AdventOfCode2023\Output.txt");
-            using (var sr = new StreamReader(@"C:\Users\310616706\source\repos\AdventOfCode2023\AdventOfCode2023\Input.txt"))
+            var sw = new StreamWriter(@"C:\Users\310616706\source\repos\AdventOfCode2023\AdventOfCode2023\Day1\Output.txt");
+            using (var sr = new StreamReader(@"C:\Users\310616706\source\repos\AdventOfCode2023\AdventOfCode2023\Day1\Input.txt"))
             {
                 while (!sr.EndOfStream)
                 {
@@ -49,9 +43,9 @@ namespace AdventOfCode2023
                     posFirst = line.IndexOf(item);
                 }
             }
-            if(line.IndexOf(line.First(c => Char.IsNumber(c))) < posFirst)
+            if (line.IndexOf(line.First(c => char.IsNumber(c))) < posFirst)
             {
-                firstFigure = line.First(c => Char.IsNumber(c));
+                firstFigure = line.First(c => char.IsNumber(c));
             }
 
             return firstFigure;
@@ -69,11 +63,11 @@ namespace AdventOfCode2023
                     posLast = line.IndexOf(item);
                 }
             }
-            if (line.IndexOf(line.First(c => Char.IsNumber(c))) > posLast)
+            if (line.IndexOf(line.First(c => char.IsNumber(c))) > posLast)
             {
-                lastFigure = line.First(c => Char.IsNumber(c));
+                lastFigure = line.First(c => char.IsNumber(c));
             }
-            return line.Last(c => Char.IsNumber(c));
+            return line.Last(c => char.IsNumber(c));
         }
         static int GetNumber(string line, StreamWriter sw)
         {
