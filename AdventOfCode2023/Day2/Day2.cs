@@ -18,7 +18,7 @@ namespace AdventOfCode2023.Day2
         public static int GetPossibleGamesTotalIds()
         {
             int total = 0;
-            using (var sr = new StreamReader(@"C:\Users\310616706\source\repos\AdventOfCode2023\AdventOfCode2023\Day2\Input.txt"))
+            using (var sr = new StreamReader(@"..\..\..\Day2\Input.txt"))
             {
                 while (!sr.EndOfStream) {
                     string[] splitedGame = sr.ReadLine().Split(':');
@@ -34,7 +34,7 @@ namespace AdventOfCode2023.Day2
         {
             int powerSum = 0;
             PowerColorSetCalculator powerColorSetCalculator = new PowerColorSetCalculator();
-            using (var sr = new StreamReader(@"C:\Users\310616706\source\repos\AdventOfCode2023\AdventOfCode2023\Day2\Input.txt"))
+            using (var sr = new StreamReader(@"..\..\..\Day2\Input.txt"))
             {
                 while (!sr.EndOfStream)
                 {

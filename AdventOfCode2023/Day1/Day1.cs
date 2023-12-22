@@ -17,8 +17,8 @@
         public static int GetCalibrationSum()
         {
             int total = 0;
-            var sw = new StreamWriter(@"C:\Users\310616706\source\repos\AdventOfCode2023\AdventOfCode2023\Day1\Output.txt");
-            using (var sr = new StreamReader(@"C:\Users\310616706\source\repos\AdventOfCode2023\AdventOfCode2023\Day1\Input.txt"))
+            var sw = new StreamWriter(@"..\..\..\Day1\Output.txt");
+            using (var sr = new StreamReader(@"..\..\..\Day1\Input.txt"))
             {
                 while (!sr.EndOfStream)
                 {
