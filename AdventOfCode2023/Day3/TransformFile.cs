@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.PortableExecutable;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,7 +22,7 @@ namespace AdventOfCode2023.Day3
         {
             char[][] chars;
             int i = 0;
-            using (var sr = new StreamReader(@"..\..\..\Day3\Input.txt"))
+            using (var sr = new StreamReader(@path))
             {
                 string file = sr.ReadToEnd();
                 int size = file.ToCharArray().Where(c => c.Equals('\r')).Count();
@@ -36,6 +37,30 @@ namespace AdventOfCode2023.Day3
                 sr.Close();
             }
             return chars;
+        }
+
+        public Dictionary<int, List<int>> ToIntDictionnary(int columnIdentifier)
+        {
+            Dictionary<int, List<int>> ints = new Dictionary<int, List<int>>();
+            int i = 0;
+            using (var sr = new StreamReader(@path))
+            {
+                int value;
+                while (!sr.EndOfStream)
+                {
+                    ints[i] = new List<int>();
+                    foreach (string element in sr.ReadLine().Split(':')[1].Split("|")[columnIdentifier].Split(' ')) {
+                        if(Int32.TryParse(element, out value))
+                        {
+                            ints[i].Add(value);
+                        }
+                    }
+                    i++;
+                }
+                sr.Close();
+            }
+
+            return ints;
         }
     }
 }
